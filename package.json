@@ -1,0 +1,75 @@
+{
+  "name": "css-variables",
+  "displayName": "css-variables",
+  "description": "Intellisense for CSS Variables defined in your config",
+  "version": "0.1.0",
+  "files": [
+    "out",
+    "images"
+  ],
+  "publisher": "mscolnick",
+  "engines": {
+    "vscode": "^1.14.0"
+  },
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mscolnick/css-variables.git"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "tsx",
+    "file",
+    "template",
+    "typescript",
+    "react",
+    "barrel"
+  ],
+  "activationEvents": [
+    "onLanguage:css"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Configuration",
+      "properties": {
+        "css-variables.variableConfig": {
+          "type": "object",
+          "default": {},
+          "description": "Nested object of css variable names. Nested objects will be flattened into an array of strings"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "rollup -c",
+    "dev": "npm run build -w",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --ext .ts --fix"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-typescript": "^6.0.0",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.11.1",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "mocha": "^8.1.3",
+    "prettier": "^2.1.2",
+    "rollup": "^2.27.1",
+    "typescript": "^4.0.3",
+    "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "globby": "^11.0.1",
+    "typescript-parser": "^2.6.1"
+  }
+}
